@@ -1,9 +1,9 @@
 {
-  "name": "robo_betty_alpha",
+  "name": "iReceptionist",
   "version": "1.0.0",
-  "homepage": "https://github.com/bluejay112/robo_betty_alpha",
+  "homepage": "https://github.com/SpotOnSoftwareInc/iReceptionist",
   "authors": [
-    "Eduardo Aguilar <e6aguilar@gmail.com>"
+    "Kurt Lang <kalang@ucsd.edu>"
   ],
   "license": "MIT",
   "ignore": [
