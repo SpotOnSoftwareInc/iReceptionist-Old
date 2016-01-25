@@ -44,7 +44,7 @@ angular.module('auth')
           // TODO: what happens when token is not returned
         }
       }
-//
+
       function error(err) {
         TokenInjector.setToken(undefined).success(success).error(error); // TODO: need to check this
       }
