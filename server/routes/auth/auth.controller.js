@@ -76,7 +76,7 @@ module.exports.template.authResetCredentials = function(req, res) {
       return res.status(401).send('loginMessage', 'Oops! Wrong password');
 	  //update password
 	
-	  //upadate password
+	  //update password
     if (req.body.newpassword !== undefined)
 	 	 admin.password = admin.generateHash(req.body.newpassword);
 	
