@@ -7,8 +7,8 @@ angular.module('dashboard')
 
     //How many milliseconds in a minute
     var MINUTE_VAL = 60000;
-    $scope.rowCollection = new Array();
-    $scope.patientqueue;
+    //$scope.rowCollection = new Array();
+    //$scope.patientqueue;
 
     //The maximum number of minutes patients should wait before warning notification pops up on queue
     var EXPECTED_WAITING_TIME = 20;
