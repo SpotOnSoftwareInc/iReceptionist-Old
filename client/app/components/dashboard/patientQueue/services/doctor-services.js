@@ -11,10 +11,10 @@ angular.module('dashboard')
   				{doctor:'Phil'},
   				{doctor:'Powell'},
   				{doctor:'Soe'},
-					{doctor:'Pepper'},
+				{doctor:'Pepper'},
   				{doctor:'Kanye'},
   				{doctor:'Ly'},
-          {doctor:'Douglas'},
+          		{doctor:'Douglas'},
   				{doctor:'Chen'},
   				{doctor:'West'},
   			];
