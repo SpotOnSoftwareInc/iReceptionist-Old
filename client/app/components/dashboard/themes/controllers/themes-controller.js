@@ -24,6 +24,7 @@ angular.module('dashboard')
                    'images/themes/old-fashioned.jpg',
                    'images/themes/tron.jpg',
                    'images/themes/walkway.jpg'];
+
     function splitRows(arr, size) {
   		var newArr = [];
   		for(var i = 0; i < arr.length; i += size) {
@@ -35,18 +36,18 @@ angular.module('dashboard')
   	$scope.selectedImage = { value : '' };
 
   	$scope.submitTheme = function() {
-        //sets the background image to what the user selected
-  		$scope.theme.background_img = $scope.img[$scope.selectedImage.value];
+      //sets the background image to what the user selected
+  	  $scope.theme.background_img = $scope.img[$scope.selectedImage.value];
       console.log("BKGD : " + $scope.selectedImage.value);
       var hasTheme = false;
         
       ThemesService.read()
         .success(function(data){
-        // $location.path('/dashboard'); // route needs to be set
-        console.log('currently has');
-        console.log(data);
+          // $location.path('/dashboard'); // route needs to be set
+          console.log('currently has');
+          console.log(data);
 
-        if(data=="null"){
+          if(data=="null"){
             ThemesService.create($scope.theme)
               .success(function(data2){ 
                 // $location.path('/dashboard'); // route needs to be set
@@ -57,32 +58,32 @@ angular.module('dashboard')
                 $scope.message = 'Error selecting theme.';
                 console.log("Theme selction failed.");
               });
-        }
+          }
 
-        if($scope.selectedImage.value !== ''){
-          ThemesService.update($scope.theme)
-            .success(function(data3){
-              // $location.path('/dashboard'); // route needs to be set
-              console.log("updated");
-              console.log(data3);
-              $scope.message = "Theme updated successfully!";
-            })
-            .error(function(err){
-              $scope.message = 'Error selecting theme.';
-              console.log("Theme selction failed.");
-            });
-        } 
-        else {
+          if($scope.selectedImage.value !== ''){
+            ThemesService.update($scope.theme)
+              .success(function(data3){
+                // $location.path('/dashboard'); // route needs to be set
+                console.log("updated");
+                console.log(data3);
+                $scope.message = "Theme updated successfully!";
+              })
+              .error(function(err){
+                $scope.message = 'Error selecting theme.';
+                console.log("Theme selction failed.");
+              });
+          }
+          else {
             $scope.message = "Please select an image first."
-        }
+          }
         
-        return data;
-      })
+          return data;
+        })
       
-      .error(function(err){
-        console.log("Theme selction failed.");
-        return err;
-      });
+        .error(function(err){
+          console.log("Theme selction failed.");
+          return err;
+        });
   	};
 
     $scope.clear = function(){

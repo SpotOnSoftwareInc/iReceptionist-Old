@@ -65,7 +65,7 @@ angular.module('dashboard')
       }
       console.log("rowCollection",$scope.rowCollection);
       $scope.displayedCollection = $scope.rowCollection;
-   }); 
+    });
 
     //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
     $scope.displayedCollection = [].concat($scope.rowCollection);
@@ -107,7 +107,7 @@ angular.module('dashboard')
           var patientqueueLength = $scope.rowCollection.length;
           var a = 0;
           for(a = 0;a<patientqueueLength;a++){
-              newQueue.push(
+            newQueue.push(
               {
                 _admin_id:$rootScope.admin_id,
                 _id:$scope.rowCollection[a].id,
