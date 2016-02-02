@@ -40,7 +40,7 @@ angular.module('dashboard')
 				else {
 
 					if($scope.newpassword != ''){
-					$scope.user.newpassword = $scope.newpassword;
+						$scope.user.newpassword = $scope.newpassword;
 					}
 					if($scope.newemail != ''){
 						$scope.user.newemail = $scope.newemail;
@@ -69,8 +69,8 @@ angular.module('dashboard')
 						.error(function(err){
 							$scope.alerts.push({type:'danger', msg: 'Settings change not successful' });
 							return err;
-					});
-				}	
+						});
+				}
 			}
 		}
-	}]);
+	  }]);
