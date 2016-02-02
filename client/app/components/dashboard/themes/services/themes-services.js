@@ -22,8 +22,8 @@ angular.module('themes')
       console.log("Create");
   		return $http.post('/api/' + $rootScope.admin_id + '/theme', theme);
   	};
-
-  	this.delete = function(){
-  		// return $http.delete('/api/:user_id/theme');
-  	};
+      //
+  	//this.delete = function(){
+		//return $http.delete('/api/:user_id/theme');
+  	//};
   }]);

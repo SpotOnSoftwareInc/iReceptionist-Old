@@ -1,4 +1,4 @@
-angular.module('dashboard')
+angular.module('dashboard',[])
   .factory('socket', function ($rootScope) {
     if (IS_MOBILE) {
         // TODO: update mobile URL ref
