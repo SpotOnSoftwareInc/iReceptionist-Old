@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('DashboardFormBuilderModule').service('FormService', function FormService($http, $rootScope) {
+angular.module('DashboardFormBuilderModule')
+    .service('FormService', function FormService($http, $rootScope) {
 
     var formsJsonPath = './static-data/sample_forms.json';
 
