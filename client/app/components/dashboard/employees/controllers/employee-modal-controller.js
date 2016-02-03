@@ -8,6 +8,5 @@ angular.module('dashboard')
 
 		$scope.cancel = function () {
 			$modalInstance.dismiss('cancel');
-			
 		};
 });
