@@ -1,26 +1,6 @@
+/**
+ * Created by kurtalang on 2/2/16.
+ */
 'use strict';
 
 var angularApp = angular.module('DashboardFormBuilderModule', ['ui.bootstrap']);
-
-// angularApp.config(function ($routeProvider) {
-
-//     $routeProvider
-//         .when('/', {
-//             templateUrl: 'views/main.html',
-//             controller: 'MainCtrl'
-//         })
-//         .when('/forms/create', {
-//             templateUrl: 'views/create.html',
-//             controller: 'CreateCtrl'
-//         })
-//         .when('/forms/:id/view', {
-//             templateUrl: 'views/view.html',
-//             controller: 'ViewCtrl'
-//         })
-//         .otherwise({
-//             redirectTo: '/'
-//         });
-
-// }).run(['$rootScope',  function() {}]);
-
-
