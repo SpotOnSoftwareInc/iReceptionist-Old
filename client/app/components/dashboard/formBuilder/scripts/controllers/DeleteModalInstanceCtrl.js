@@ -1,17 +1,17 @@
 'use strict';
 
 function DeleteModalInstanceCtrl($modalInstance){
-	var vm = this;
+  var vm = this;
 
-	vm.ok = function () {
-		console.log('Deleted field');
-    	$modalInstance.close();
-  	};
+  vm.ok = function () {
+    console.log('Deleted field');
+    $modalInstance.close();
+  };
 
-  	vm.cancel = function () {
-    	$modalInstance.dismiss('cancel');
-  	};
+  vm.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
 }
 
 angular.module('DashboardFormBuilderModule')
-	.controller('DeleteModalInstanceCtrl', ['$modalInstance', DeleteModalInstanceCtrl]);
+  .controller('DeleteModalInstanceCtrl', ['$modalInstance', DeleteModalInstanceCtrl]);

@@ -37,6 +37,7 @@ angular.module('checkin')
       this.checkinPatient = function (patient_name) {
           //  console.log("YAYYYY checkin ");
             //console.log($rootScope);
+            console.log("MARK'S CHANGES");
             console.log(patient_name);
             $http.post('/api/patient/checkin', 
               {_admin_id: $rootScope.admin_id, name: patient_name})
