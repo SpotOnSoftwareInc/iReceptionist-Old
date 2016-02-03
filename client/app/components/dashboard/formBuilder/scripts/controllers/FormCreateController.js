@@ -35,10 +35,10 @@ angular.module('DashboardFormBuilderModule')
          
          success(function(data, status, headers, config) {
           console.log(data);
-           if (typeof data.template !== 'undefined' && typeof data.template !== null
-               && typeof data.template.form_fields !== 'undefined' && data.template.form_fields !== null){
+           if (typeof data.template !== 'undefined' && typeof data.template !== null && typeof data.template.form_fields !== 'undefined' && data.template.form_fields !== null){
 
-              for(var i = 0; i < data.template.form_fields.length; i++) {
+              for(var i = 0; i < data.template.form_fields.length; i++)
+              {
                 data.template.form_fields[i].field_readonly = true;
               }
               console.log(data.template);
@@ -55,13 +55,13 @@ angular.module('DashboardFormBuilderModule')
               }
             } else {
               console.log("New form");
-              var DefaultField            = {"field_id" : 1,
-                                             "field_title" : "Name",
-                                             "field_type" : "textfield",
-                                             "field_placeholder" : "Name",
-                                             "field_required" : true,
-                                             "field_disabled" : false,
-                                             "field_readonly" : true};
+             var DefaultField            = {"field_id" : 1,
+                                            "field_title" : "Name",
+                                            "field_type" : "textfield",
+                                            "field_placeholder" : "Name",
+                                            "field_required" : true,
+                                            "field_disabled" : false,
+                                            "field_readonly" : true};
               $scope.form.form_fields.push(DefaultField);
               
               if($scope.previewMode === false) {
@@ -69,12 +69,13 @@ angular.module('DashboardFormBuilderModule')
               }
               $scope.form.submitted = false;
               FormService.formData = $scope.form;
+
             }
            console.log(data);
 
          }).
          error(function(data, status, headers, config) {
-           // no saved templates
+            // no saved templates
          });
 
          $scope.previewMode = true;
@@ -130,7 +131,7 @@ angular.module('DashboardFormBuilderModule')
       lastOptionID = field.field_options[field.field_options.length-1].option_id;
     }
 
-    // new option's id
+      // new option's id
     var option_id = lastOptionID + 1;
 
     var newOption = {
@@ -164,10 +165,10 @@ angular.module('DashboardFormBuilderModule')
   // deletes all the fields
   $scope.reset = function (){
     if($scope.form.form_fields !== null && $scope.form.form_fields.length !== 0) {
-      $scope.form.form_fields.splice(1, $scope.form.form_fields.length);
-      $scope.addField.lastAddedID = 0;
-      $scope.previewMode = true;
-      $scope.form.submitted = false;
+        $scope.form.form_fields.splice(1, $scope.form.form_fields.length);
+        $scope.addField.lastAddedID = 0;
+        $scope.previewMode = true;
+        $scope.form.submitted = false;
     }
   };
 });

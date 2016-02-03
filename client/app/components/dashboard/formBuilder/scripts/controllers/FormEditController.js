@@ -3,68 +3,66 @@
 angular.module('DashboardFormBuilderModule')
   .controller('FormEditController', function ($scope, $modal, FormService, $http, $filter, $location) {
 
-    $scope.templateId = 0;
-    $scope.prevJson = $filter('json')($scope.form);
-    // preview form mode
-    $scope.previewMode = false;
-    $scope.editMode = false;
+  $scope.templateId = 0;
+  $scope.prevJson = $filter('json')($scope.form);
+  // preview form mode
+  $scope.previewMode = false;
+  $scope.editMode = false;
 
-    // new form
-    $scope.form = {};
-    $scope.form.form_id = 1;
-    $scope.form.form_name = 'My Form';
-    $scope.form.form_fields = [];
+  // new form
+  $scope.form = {};
+  $scope.form.form_id = 1;
+  $scope.form.form_name = 'My Form';
+  $scope.form.form_fields = [];
 
-    // previewForm - for preview purposes, form will be copied into this
-    // otherwise, actual form might get manipulated in preview mode
-    $scope.previewForm = {};
+  // previewForm - for preview purposes, form will be copied into this
+  // otherwise, actual form might get manipulated in preview mode
+  $scope.previewForm = {};
 
-    // add new field drop-down:
-    $scope.addField = {};
-    $scope.addField.types = FormService.fields;
-    $scope.addField.new = $scope.addField.types[0].name;
-    $scope.addField.lastAddedID = 0;
+  // add new field drop-down:
+  $scope.addField = {};
+  $scope.addField.types = FormService.fields;
+  $scope.addField.new = $scope.addField.types[0].name;
+  $scope.addField.lastAddedID = 0;
 
-    // accordion settings
-    $scope.accordion = {};
-    $scope.accordion.oneAtATime = true;
+  // accordion settings
+  $scope.accordion = {};
+  $scope.accordion.oneAtATime = true;
 
-    // create new field button click
-    $scope.addNewField = function(){
-      // incr field_id counter
-      $scope.addField.lastAddedID++;
-      var newField = {
-        "field_id" : $scope.addField.lastAddedID,
-        "field_title" : "New field - " + ($scope.addField.lastAddedID),
-        "field_type" : $scope.addField.new,
-        "field_placeholder" : "",
-        "field_required" : true,
-        "field_disabled" : false
-      };
-
-      // put newField into fields array
-      $scope.form.form_fields.push(newField);
-      if($scope.previewMode == false) {
-        $scope.previewMode = true;
-      }
-      $scope.form.submitted = false;
+  // create new field button click
+  $scope.addNewField = function(){
+    // incr field_id counter
+    $scope.addField.lastAddedID++;
+    var newField = {
+      "field_id" : $scope.addField.lastAddedID,
+      "field_title" : "New field - " + ($scope.addField.lastAddedID),
+      "field_type" : $scope.addField.new,
+      "field_placeholder" : "",
+      "field_required" : true,
+      "field_disabled" : false
     };
-
-    var removeOptions = function(){
-      for(var i = 0; i < $scope.form.form_fields.length; i++){
+    //$scope
+    // put newField into fields array
+    $scope.form.form_fields.push(newField);
+    if($scope.previewMode == false) {
+      $scope.previewMode = true;
+    }
+    $scope.form.submitted = false;
+  };
+  var removeOptions = function(){
+    for(var i = 0; i < $scope.form.form_fields.length; i++){
           if($scope.form.form_fields[i].field_type != "radio" || $scope.addField.new != "dropdown"){
               $scope.form.form_fields[i].field_options = [];
           }
-      }
-    };
-
-  // deletes particular field on button click
+        }
+  };
+// deletes particular field on button click
   $scope.deleteField = function (field_id){
     var modalInstance = $modal.open({
         templateUrl: 'views/components/dashboard/formBuilder/views/deleteModal.html',
         controller : 'DeleteModalInstanceCtrl',
         controllerAs : 'vm'
-    });
+      });
 
     modalInstance.result.then(function() {
       // confirmed delete
@@ -126,10 +124,10 @@ angular.module('DashboardFormBuilderModule')
     removeOptions();
     // object of this form template
     var formJson = $filter('json')($scope.form);
-     var putJson = {
-                     "template":formJson,
-                     "template_id":$scope.templateId//"54f8f382191b38ec26dd57a6"
-                   };
+     var putJson = { 
+                        "template":formJson,
+                        "template_id":$scope.templateId//"54f8f382191b38ec26dd57a6"
+                    };
      $http.put('/api/form/template', putJson).
      success(function(data, status, headers, config) {
        // this callback will be called asynchronously
@@ -203,7 +201,7 @@ angular.module('DashboardFormBuilderModule')
           templateUrl: 'views/components/dashboard/formBuilder/views/deleteModal.html',
           controller : 'DeleteModalInstanceCtrl',
           controllerAs : 'vm'
-      });
+        });
 
       modalInstance.result.then(function() {
         // confirmed reset

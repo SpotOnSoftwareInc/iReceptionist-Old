@@ -5,26 +5,27 @@ angular.module('DashboardFormBuilderModule')
     return {
       controller: function($scope, FormService, $modal, $timeout){
 
-        function redirectToCheckin() {
-          console.log("redirecttoCheckin");
-           $scope.form.submitted= false;
-        }
+    function redirectToCheckin() {
+      console.log("redirecttoCheckin");
+       $scope.form.submitted= false;
+    }
 
         $scope.submit = function(){
-            $scope.form.submitted = true;
+          
+              $scope.form.submitted = true;
 
-            for(var i = 0; i < $scope.form.form_fields.length; i++)
-            {
+              for(var i = 0; i < $scope.form.form_fields.length; i++)
+              {
                 $scope.form.form_fields[i].field_readonly = false;
                 $scope.form.form_fields[i].field_id = i+1;
                 console.log($scope.form.form_fields);
-            }
+              }
 
-            FormService.formData.submitted = true;
-            //console.log($scope.form.form_fields);
+              FormService.formData.submitted = true;
+              //console.log($scope.form.form_fields);
 
-            FormService.createNewForm(FormService.formData);
-            $timeout(redirectToCheckin, 5000);
+              FormService.createNewForm(FormService.formData);
+              $timeout(redirectToCheckin, 5000);
         };
       
       },
