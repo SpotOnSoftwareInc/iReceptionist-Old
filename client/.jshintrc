@@ -21,7 +21,7 @@
     "nonbsp"        : false,     // true: Prohibit "non-breaking whitespace" characters.
     "nonew"         : false,    // true: Prohibit use of constructors for side-effects (without assignment)
     "plusplus"      : false,    // true: Prohibit use of `++` & `--`
-    "quotmark"      : true,    // Quotation mark consistency:
+    "quotmark"      : false,    // Quotation mark consistency:
                                 //   false    : do nothing (default)
                                 //   true     : ensure whatever is used is consistent
                                 //   "single" : require single quotes
@@ -29,11 +29,11 @@
     "undef"         : false,     // true: Require all non-global variables to be declared (prevents global leaks)
     "unused"        : false,     // true: Require all defined variables be used
     "strict"        : false,     // true: Requires all functions run in ES5 Strict Mode
-    "maxparams"     : 100,    // {int} Max number of formal params allowed per function
-    "maxdepth"      : 100,    // {int} Max depth of nested blocks (within functions)
-    "maxstatements" : 100,    // {int} Max number statements per function
-    "maxcomplexity" : 100,    // {int} Max cyclomatic complexity per function
-    "maxlen"        : 100,    // {int} Max number of characters per line
+    "maxparams"     : false,    // {int} Max number of formal params allowed per function
+    "maxdepth"      : false,    // {int} Max depth of nested blocks (within functions)
+    "maxstatements" : false,    // {int} Max number statements per function
+    "maxcomplexity" : false,    // {int} Max cyclomatic complexity per function
+    "maxlen"        : false,    // {int} Max number of characters per line
 
     // Relaxing
     "asi"           : false,     // true: Tolerate Automatic Semicolon Insertion (no semicolons)

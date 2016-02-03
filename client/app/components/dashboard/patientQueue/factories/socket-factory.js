@@ -1,8 +1,7 @@
-angular.module('dashboard',[])
+angular.module('dashboard')
   .factory('socket', function ($rootScope) {
     if (IS_MOBILE) {
-        // TODO: update mobile URL ref
-        var socket = io.connect('https://spotonsoftware.herokuapp.com');
+        var socket = io.connect('https://blue-jay.herokuapp.com');
     } else {
         var socket = io.connect();
     }
