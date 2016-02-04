@@ -79,11 +79,11 @@ angular.module('robobetty', appendIonic(
         templateUrl: 'views/components/receptionistPortal/register/views/register.html',
         mobile: true
       })
-      //.state('checkin', {
-      //  url: '/checkin',
-      //  templateUrl: 'views/components/patientCheckin/checkin/views/checkin.html',
-      //  mobile: true
-      //})
+      .state('checkin', {
+        url: '/checkin',
+        templateUrl: 'views/components/patientCheckin/checkin/views/checkin.html',
+        mobile: true
+      })
       .state('thankyou', {
         url: '/thankyou',
         templateUrl: 'views/components/receptionistPortal/register/views/thankyou.html',
