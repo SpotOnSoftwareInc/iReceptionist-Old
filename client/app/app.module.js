@@ -15,7 +15,8 @@ angular.module('robobetty', appendIonic(
     'thankyouCheckIn',
     'recovery',
     'recoverythx',
-    'themes'
+    'themes',
+    'home'
     //'checkout'
    ]))
   .config(function($stateProvider, $urlRouterProvider) {
@@ -28,7 +29,7 @@ angular.module('robobetty', appendIonic(
       })
       .state('home', {
         url: '/home',
-        templateUrl: 'views/components/home/views/home.html',
+        templateUrl: 'views/components/receptionistPortal/home/views/home.html',
         mobile: false
       })
       .state('createForm', {
