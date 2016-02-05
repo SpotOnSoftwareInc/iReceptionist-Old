@@ -8,7 +8,6 @@ function ModalInstanceCtrl($modalInstance){
 	vm.btns = [{result:'ok', label: 'OK', cssClass: 'btn-primary btn'}];
 
 	vm.ok = function () {
-		console.log('hey');
     	$modalInstance.close();
   	};
 }
