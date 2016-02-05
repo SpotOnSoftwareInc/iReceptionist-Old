@@ -43,7 +43,7 @@ angular.module('checkin')
           .error(function(err){
             return err;
           });
-      }
+      };
 
     // Start the timer
     $timeout(tick, $scope.tickInterval);

@@ -1,11 +1,9 @@
 <!-- Adding the NavBar -->
 <!-- NAVIGATION BAR -->
-<nav ng-app="auth" role="navigation" id="navigation">
+<nav ng-app="auth" role="navigation" id="nav-top">
     <!--Brand-->
     <div class="topbar-left text-center">
-        <a class="" href="#/patientQueue">
             <div class="navbar-icon"></div>
-        </a>
     </div>
     <!--Nav items-->
 
@@ -15,12 +13,17 @@
             <div ng-controller="SigninController" ng-cloak>
                 <div id="container">
                     <form ng-submit="login()">
-
-                        <img id="logo" src="images/logo.png">
-
                         <input ng-model="user.email" type="name" placeholder="Company Email">
                         <input type="password" ng-model="user.password" placeholder="Password">
+                        <div id="lower">
+                            <input type="submit" value="Sign In">
+                            <input ng-show="!appConfig.isMobile" type="checkbox" id="signinCheck">
+                            <label ng-show="!appConfig.isMobile" class="check" for="checkbox"> Remember Me </label>
 
+
+                            <a ng-show="!appConfig.isMobile" href="#/recovery" id="help">Forgot Password?</a>
+
+                        </div>
                     </form>
                     <div id="signup">
                         <p  id="error_message">{{errMessage}}</p>

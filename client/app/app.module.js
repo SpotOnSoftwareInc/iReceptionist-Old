@@ -15,7 +15,8 @@ angular.module('robobetty', appendIonic(
     'thankyouCheckIn',
     'recovery',
     'recoverythx',
-    'themes'
+    'themes',
+    'home'
     //'checkout'
    ]))
   .config(function($stateProvider, $urlRouterProvider) {
@@ -79,11 +80,11 @@ angular.module('robobetty', appendIonic(
         templateUrl: 'views/components/receptionistPortal/register/views/register.html',
         mobile: true
       })
-      //.state('checkin', {
-      //  url: '/checkin',
-      //  templateUrl: 'views/components/patientCheckin/checkin/views/checkin.html',
-      //  mobile: true
-      //})
+      .state('checkin', {
+        url: '/checkin',
+        templateUrl: 'views/components/patientCheckin/checkin/views/checkin.html',
+        mobile: true
+      })
       .state('thankyou', {
         url: '/thankyou',
         templateUrl: 'views/components/receptionistPortal/register/views/thankyou.html',
@@ -135,7 +136,7 @@ angular.module('robobetty', appendIonic(
       // Routing for non-registered
       if(!appConfig.debugMode) {
         if(!$rootScope.admin_id) {
-          if(toState.name != 'home' && toState.name != 'signing' && toState.name != 'register') {
+          if(toState.name != 'home' && toState.name != 'signin' && toState.name != 'register') {
             $state.go("home");
           }
         }
