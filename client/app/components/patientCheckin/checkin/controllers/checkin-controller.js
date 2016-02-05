@@ -14,7 +14,7 @@ angular.module('checkin')
     var tick = function () {
         $scope.clock = Date.now(); // get the current time
         $timeout(tick, $scope.tickInterval); // reset the timer
-    }
+    };
 
       //function that sets the background by using the getTheme method of the CheckinService
       //also, uses the CheckinService to get the forms that the business wants to display
@@ -43,7 +43,7 @@ angular.module('checkin')
           .error(function(err){
             return err;
           });
-      }
+      };
 
     // Start the timer
     $timeout(tick, $scope.tickInterval);
