@@ -15,7 +15,8 @@ angular.module('robobetty', appendIonic(
     'thankyouCheckIn',
     'recovery',
     'recoverythx',
-    'themes'
+    'themes',
+    'home'
     //'checkout'
    ]))
   .config(function($stateProvider, $urlRouterProvider) {
