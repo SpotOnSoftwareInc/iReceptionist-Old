@@ -1,44 +1,5 @@
 <!-- Adding the NavBar -->
 <!-- NAVIGATION BAR -->
-<nav ng-app="auth" role="navigation" id="navigation">
-  <!--Brand-->
-  <div class="topbar-left text-center">
-    <a class="" href="#/patientQueue">
-      <div class="navbar-icon"></div>
-    </a>
-  </div>
-  <!--Nav items-->
-
-  <ul class="topbar-right">
-
-    <li>
-      <div ng-controller="SigninController" ng-cloak>
-        <div id="container">
-          <form ng-submit="login()">
-
-            <img id="logo" src="images/logo.png">
-
-            <input ng-model="user.email" type="name" placeholder="Company Email">
-            <input type="password" ng-model="user.password" placeholder="Password">
-
-          </form>
-          <div id="signup">
-            <p  id="error_message">{{errMessage}}</p>
-          </div>
-
-        </div>
-        <div ng-show="!appConfig.isMobile" class="register">
-          <a href="#/register">Create an account</a>
-        </div>
-      </div>
-    </li>
-    <li></li>
-  </ul>
-</nav>
-
-
-
-
 <div ng-controller="HomeController">
   <div class="jumbotron text-center" ng-cloak=>
     <h1>The Home Page</h1>
