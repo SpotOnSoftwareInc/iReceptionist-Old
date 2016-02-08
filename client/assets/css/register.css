@@ -45,17 +45,28 @@ html, body {
 	width:100%;
 }
 
-#container {
+.reg-element {
+	float:left;
 	background-color: #f7f7f7;
-	width: 357px;
-    height: 570px;
-	position: absolute;
-	padding-top: 10px;
-    margin-right: auto;
-    margin-left: 60%;
-    margin-top: 55px;
-    margin-bottom: 10%;
+	padding: 10px;
 	box-shadow: 0 1px 2px 3px rgba(0, 0, 0, .1);
+	text-align:center;
+}
+
+.plan-content {
+	width:45%;
+	margin:2%;
+}
+
+.plan-content > ul {
+	margin:0;
+	padding:0;
+	list-style-type: none;
+}
+
+.plan-content > h3 {
+	margin:0;
+	padding:0;
 }
 
 form {
@@ -195,20 +206,6 @@ h1{
  position: absolute;
  margin-top: 90px;
  margin-left: 240px;
-}
-
-.createYourAccount {
-  position: absolute;
-  margin-top: 60px;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  margin-left: 110px;
-}
-
-.description {
-  position: absolute;
-  margin-top: 247px;
-  text-align: center;
-  margin-left: 180px;
 }
 
 .learnMore {
