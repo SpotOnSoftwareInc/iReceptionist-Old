@@ -27,6 +27,15 @@ html, body {
     position: absolute;
 }
 
+body {
+	background: fixed url('../images/register_back.jpg');
+}
+
+.container-fluid {
+	background-color:#fff;
+	width:90%;
+}
+
 #registerError {
 	width: 100%;
 	margin-top: 10px;
@@ -41,27 +50,41 @@ html, body {
 
 .navi {
 	background: #2B76A0;
-	height: 40px;
 	width:100%;
+	padding:5px;
 }
 
 .reg-element {
-	float:left;
+	display:inline-block;
 	background-color: #f7f7f7;
 	padding: 10px;
 	box-shadow: 0 1px 2px 3px rgba(0, 0, 0, .1);
 	text-align:center;
 }
 
+.promo-img {
+	margin-top:5%;
+	max-width:75%;
+}
+
+.plans {
+	margin:10% 0;
+}
+
 .plan-content {
 	width:45%;
-	margin:2%;
+	margin:0 2%;
+	float:left;
 }
 
 .plan-content > ul {
 	margin:0;
 	padding:0;
 	list-style-type: none;
+}
+
+.plan-content > ul > li {
+	margin-bottom:1%;
 }
 
 .plan-content > h3 {
@@ -71,35 +94,38 @@ html, body {
 
 form {
 	margin: 0 auto;
-	margin-top: 20px;
 }
 
 .signupform  {
 	text-align: left;
 	font-size: 14px;
-	padding-bottom: 30px;
-	font-weight: strong;
+	padding: 5% 5% 10% 5%;
+	font-weight: bold;
+	margin:0 auto;
 }
 
 .formfield {
-	padding: 10px;
-	padding-left: 35px;
+	padding-bottom:3%;
+}
+
+.formfield > p {
+	margin:0;
+	font-weight:bold;
+}
+
+.formfield input {
+	margin:3px;
+	padding:3px 3px 1px 10px;
 }
 
 .checkboxfield {
 	padding: 5px;
 	padding-top: 10px;
-	padding-left: 35px;
 }
 
 #registerCheck {
     height: initial;
     width: initial;
-}
-
-.formSpacing {
-    margin-top: 3px;
-    padding-left: 10px;
 }
 
 
@@ -109,7 +135,7 @@ input[type=password],
 input[type=email] {
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 12px;
-	width: 290px;
+	width: 100%;
 	height: 35px;
 	border: 1px solid #C7D0D2;
 	border-radius: 2px;
@@ -119,25 +145,8 @@ input[type=email] {
 	margin-left: 3%;
 }
 
-#register-signup-btn {
-	float: left;
-	margin-left: 10px;
-	margin-top: 4px;
-    width: 125px;
-	color: #3D8CC4;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#FFF));
-	background-image: -moz-linear-gradient(top left 90deg, #FFF 0%, #FFF 100%);
-	background-image: linear-gradient(top left 90deg, #FFF 0%, #FFF 100%);
-	border: 1px solid #FFF;
-}
-
 input[type=submit] {
-	float: right;
-	margin-top: 10px;
-    margin-right: 40px;
-	width: 60px;
-	height: 30px;
-	font-size: 12px;
+	padding:3%;
 	font-weight: bold;
 	color: #fff;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#3D8CC4), to(#3D8CC4));
@@ -147,6 +156,7 @@ input[type=submit] {
 	border: 1px solid #3D8CD5;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .5);
 	cursor: pointer;
+	line-height:100%;
 }
 
 input[type=submit]:hover {
@@ -168,6 +178,7 @@ input[type=submit]:active {
 	font-size: 11px;
 	color: #444;
 	text-shadow: 0 1px 0 #fff;
+	padding:0px;
 }
 
 .button{
@@ -180,7 +191,6 @@ input[type=submit]:active {
 	margin-left: 280px;
 	text-align: center;
 	right: 50px;
-
 }
 
 .button a{
@@ -188,11 +198,6 @@ input[type=submit]:active {
 	color: white;
 
 }
-
-h1{
-	text-align: center;
-}
-
 .arrowContainer{
 	align:left;
 }
@@ -242,6 +247,7 @@ ul#strength {
     bottom:5px;
 }
 
+/* TODO: leverage Bootstrap functionality instead of using adaptive styling */
 /* Friendly for mobile */
 @media (max-width: 1000px) {
 	#images {
